@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epithor — Inicio | Agencia de Identidad Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { obsidian: '#0b0c10', surface: '#12141c', accent: '#00f2fe' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Space Grotesk', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0b0c10; color: #e5e7eb; scroll-behavior: smooth; }
+        h1, h2, h3, .font-heading { font-family: 'Space Grotesk', sans-serif; }
+        .glass-card { background: rgba(26, 29, 40, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header class="fixed top-0 w-full z-50 glass-card border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-10 h-14 rounded-xl overflow-hidden border border-accent/30 bg-surface flex items-center justify-center">
+                    <img src="LOGO EPITHOR.JPG" alt="Logo Epithor" class="w-full h-full object-cover">
+                </div>
+                <span class="text-2xl font-bold font-heading text-white">EPITHOR</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="index.html" class="text-accent font-semibold" data-es="Inicio" data-en="Home">Inicio</a>
+                <a href="nosotros.html" class="hover:text-accent transition-colors" data-es="Sobre nosotros" data-en="About Us">Sobre nosotros</a>
+                <a href="servicios.html" class="hover:text-accent transition-colors" data-es="Servicios" data-en="Services">Servicios</a>
+                <a href="contacto.html" class="hover:text-accent transition-colors" data-es="Contáctanos" data-en="Contact Us">Contáctanos</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <button onclick="openLoginModal()" class="bg-gradient-to-r from-accent to-blue-600 text-obsidian font-semibold px-6 py-2.5 rounded-full shadow-lg shadow-accent/20 hover:opacity-90 transition-opacity cursor-pointer" data-es="Iniciar Sesión" data-en="Log In">
+                    Iniciar Sesión
+                </button>
+
+                <!-- BOTÓN GLOBAL DE IDIOMA (IGUAL A TU REFERENCIA) -->
+                <button id="lang-toggle" onclick="toggleLanguage()" class="flex items-center gap-2 px-4 py-2 rounded-full border border-accent/40 bg-accent/10 text-accent font-semibold text-xs hover:bg-accent/20 transition-all shadow-sm cursor-pointer">
+                    <i class="fa-solid fa-globe"></i> 
+                    <span id="lang-text">ES</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="pt-32 pb-20 w-full space-y-24">
+
+        <!-- 1. HERO SECTION -->
+        <section class="max-w-6xl mx-auto px-6 text-center pt-12">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-accent/30 text-accent text-sm mb-8 shadow-lg shadow-accent/5">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> <span data-es="Agencia de Branding e Identidad Visual" data-en="Branding & Visual Identity Agency">Agencia de Branding e Identidad Visual</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold font-heading leading-tight text-white max-w-5xl mx-auto">
+                <span data-es="Transformamos la esencia de tu marca en" data-en="We transform your brand's essence into">Transformamos la esencia de tu marca en</span> <span class="bg-gradient-to-r from-accent via-cyan-200 to-white bg-clip-text text-transparent" data-es="arte visual impactante" data-en="impactful visual art">arte visual impactante</span>
+            </h1>
+            
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mt-6 leading-relaxed" data-es="Diseñamos identidades corporativas únicas, logotipos memorables y experiencias digitales pensadas para negocios que buscan trascender." data-en="We design unique corporate identities, memorable logos, and digital experiences designed for businesses seeking to transcend.">
+                Diseñamos identidades corporativas únicas, logotipos memorables y experiencias digitales pensadas para negocios que buscan trascender.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="servicios.html" class="bg-accent text-obsidian font-bold px-8 py-4 rounded-xl shadow-lg shadow-accent/25 hover:bg-cyan-300 transition-all">
+                    <span data-es="Explorar Servicios" data-en="Explore Services">Explorar Servicios</span> <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+                <a href="contacto.html" class="glass-card text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-all border border-white/15" data-es="Empieza tu Proyecto" data-en="Start Your Project">
+                    Empieza tu Proyecto
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. PILARES / POR QUÉ ELEGIRNOS -->
+        <section class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-accent text-xs font-semibold uppercase tracking-widest" data-es="Nuestra Ventaja" data-en="Our Advantage">Nuestra Ventaja</span>
+                <h2 class="text-3xl font-bold font-heading text-white mt-2" data-es="¿Por qué elegir Epithor?" data-en="Why choose Epithor?">¿Por qué elegir Epithor?</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-3xl border border-white/10">
+                    <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent text-2xl mb-6 border border-accent/20">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-heading text-white mb-3" data-es="Diseño Estratégico" data-en="Strategic Design">Diseño Estratégico</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-es="No solo creamos diseños bonitos; estructuramos marcas con un propósito claro y alineadas al mercado objetivo." data-en="We don't just create pretty designs; we structure brands with a clear purpose aligned with the target market.">
+                        No solo creamos diseños bonitos; estructuramos marcas con un propósito claro y alineadas al mercado objetivo.
+                    </p>
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl border border-white/10">
+                    <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent text-2xl mb-6 border border-accent/20">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-heading text-white mb-3" data-es="Identidad Única" data-en="Unique Identity">Identidad Única</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-es="Garantizamos que cada logotipo y manual de marca refleje la personalidad genuina y diferencial de tu negocio." data-en="We guarantee that every logo and brand manual reflects the genuine and differential personality of your business.">
+                        Garantizamos que cada logotipo y manual de marca refleje la personalidad genuina y diferencial de tu negocio.
+                    </p>
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl border border-white/10">
+                    <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent text-2xl mb-6 border border-accent/20">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold font-heading text-white mb-3" data-es="Acompañamiento Cercano" data-en="Close Support">Acompañamiento Cercano</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-es="Trabajamos codo a codo contigo para capturar tu visión y materializarla en resultados profesionales." data-en="We work side by side with you to capture your vision and materialize it into professional results.">
+                        Trabajamos codo a codo contigo para capturar tu visión y materializarla en resultados profesionales.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. VIDEO PROMOCIONAL OFICIAL DE LA EMPRESA -->
+        <section class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-8 space-y-3">
+                <span class="text-accent text-xs font-semibold uppercase tracking-widest" data-es="Conoce nuestra esencia" data-en="Know our essence">Conoce nuestra esencia</span>
+                <h2 class="text-3xl font-bold font-heading text-white" data-es="Video Promocional — Epithor" data-en="Promotional Video — Epithor">Video Promocional — Epithor</h2>
+                <p class="text-gray-400 text-sm max-w-xl mx-auto" data-es="Descubre de cerca cómo transformamos la identidad visual y potenciamos los microemprendimientos." data-en="Discover closely how we transform visual identity and empower micro-enterprises.">Descubre de cerca cómo transformamos la identidad visual y potenciamos los microemprendimientos.</p>
+            </div>
+
+            <div class="glass-card p-3 md:p-4 rounded-3xl border border-accent/30 shadow-2xl overflow-hidden relative bg-surface">
+                <div class="aspect-video w-full rounded-2xl overflow-hidden bg-obsidian relative shadow-inner">
+                    <video controls class="w-full h-full object-cover rounded-2xl">
+                        <source src="video promocional agencia T5.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de videos.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. CASO DE ÉXITO / PROYECTO INSTITUCIONAL -->
+        <section class="max-w-7xl mx-auto px-6">
+            <div class="glass-card p-8 md:p-12 rounded-3xl border border-accent/30 bg-gradient-to-r from-surface via-[#12141c] to-obsidian relative overflow-hidden">
+                <div class="absolute -right-20 -top-20 w-60 h-60 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="grid lg:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/10 border border-accent/30 text-accent text-xs font-semibold">
+                            <i class="fa-solid fa-award"></i> <span data-es="Caso de Éxito Destacado" data-en="Featured Success Story">Caso de Éxito Destacado</span>
+                        </div>
+                        <h2 class="text-3xl font-bold font-heading text-white leading-snug" data-es="Identidad Visual y Multimedia para el Día de las Matemáticas" data-en="Visual Identity and Multimedia for Mathematics Day">
+                            Identidad Visual y Multimedia para el Día de las Matemáticas
+                        </h2>
+                        <p class="text-gray-300 text-sm leading-relaxed" data-es="Desarrollamos la conceptualización gráfica y material audiovisual institucional para la Institución Educativa Eustaquio Palacios. Un proyecto dinámico que integró diseño de piezas visuales y edición de video orientadas a motivar la participación estudiantil." data-en="We developed graphic conceptualization and institutional audiovisual material for the Eustaquio Palacios Educational Institution. A dynamic project integrating visual design and video editing aimed at motivating student participation.">
+                            Desarrollamos la conceptualización gráfica y material audiovisual institucional para la Institución Educativa Eustaquio Palacios. Un proyecto dinámico que integró diseño de piezas visuales y edición de video orientadas a motivar la participación estudiantil.
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <div class="bg-obsidian/60 px-4 py-2 rounded-xl border border-white/10 text-xs text-gray-300">
+                                <strong class="text-accent block">Cliente:</strong> I.E. Eustaquio Palacios
+                            </div>
+                            <div class="bg-obsidian/60 px-4 py-2 rounded-xl border border-white/10 text-xs text-gray-300">
+                                <strong class="text-accent block" data-es="Área:" data-en="Area:">Área:</strong> Multimedia & Branding
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full aspect-video rounded-2xl overflow-hidden border border-accent/30 bg-obsidian relative shadow-2xl flex items-center justify-center">
+                        <video controls class="w-full h-full object-cover rounded-2xl">
+                            <source src="VIDEO MATES.mp4" type="video/mp4">
+                            Tu navegador no soporta la reproducción de videos.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SECCIÓN DE RESEÑAS / TESTIMONIOS -->
+        <section class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-accent text-xs font-semibold uppercase tracking-widest" data-es="Confianza y Resultados" data-en="Trust and Results">Confianza y Resultados</span>
+                <h2 class="text-3xl font-bold font-heading text-white mt-2" data-es="Lo que dicen nuestros clientes" data-en="What our clients say">Lo que dicen nuestros clientes</h2>
+                <p class="text-gray-400 text-sm mt-2" data-es="Experiencias reales de emprendedores e instituciones que confiaron en Epithor" data-en="Real experiences from entrepreneurs and institutions that trusted Epithor">Experiencias reales de emprendedores e instituciones que confiaron en Epithor</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Reseña 1 -->
+                <div class="glass-card p-6 rounded-3xl border border-white/10 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="text-accent text-xs space-x-0.5">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-xs md:text-sm leading-relaxed italic" data-es="&quot;Epithor le dio una identidad completamente profesional a mi emprendimiento. El logotipo y el manual de marca superaron mis expectativas.&quot;" data-en="&quot;Epithor gave a completely professional identity to my business. The logo and brand manual exceeded my expectations.&quot;">
+                            "Epithor le dio una identidad completamente profesional a mi emprendimiento. El logotipo y el manual de marca superaron mis expectativas."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-white/10 pt-4">
+                        <div class="w-9 h-9 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center text-accent font-bold text-xs">CR</div>
+                        <div>
+                            <h4 class="text-white font-heading font-semibold text-xs md:text-sm">Camila Ramírez</h4>
+                            <span class="text-gray-400 text-[10px] md:text-xs" data-es="Boutique Local" data-en="Local Boutique">Boutique Local</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="glass-card p-6 rounded-3xl border border-white/10 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="text-accent text-xs space-x-0.5">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-xs md:text-sm leading-relaxed italic" data-es="&quot;Excelente atención y profesionalismo. Entendieron exactamente lo que necesitaba transmitir mi cafetería y ahora los clientes nos reconocen al instante.&quot;" data-en="&quot;Excellent service and professionalism. They understood exactly what my coffee shop needed to convey and now customers recognize us instantly.&quot;">
+                            "Excelente atención y profesionalismo. Entendieron exactamente lo que necesitaba transmitir mi cafetería y ahora los clientes nos reconocen al instante."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-white/10 pt-4">
+                        <div class="w-9 h-9 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center text-accent font-bold text-xs">AM</div>
+                        <div>
+                            <h4 class="text-white font-heading font-semibold text-xs md:text-sm">Andrés Morales</h4>
+                            <span class="text-gray-400 text-[10px] md:text-xs" data-es="Cafetería Artesanal" data-en="Artisan Coffee Shop">Cafetería Artesanal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="glass-card p-6 rounded-3xl border border-white/10 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="text-accent text-xs space-x-0.5">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-xs md:text-sm leading-relaxed italic" data-es="&quot;El proceso fue súper claro y ordenado. Tener un manual de marca bien estructurado me ha facilitado la vida para crear contenido profesional.&quot;" data-en="&quot;The process was super clear and orderly. Having a well-structured brand manual has made my life easier to create professional content.&quot;">
+                            "El proceso fue súper claro y ordenado. Tener un manual de marca bien estructurado me ha facilitado la vida para crear contenido profesional."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-white/10 pt-4">
+                        <div class="w-9 h-9 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center text-accent font-bold text-xs">LS</div>
+                        <div>
+                            <h4 class="text-white font-heading font-semibold text-xs md:text-sm">Lucía Sánchez</h4>
+                            <span class="text-gray-400 text-[10px] md:text-xs" data-es="Emprendimiento Digital" data-en="Digital Venture">Emprendimiento Digital</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 4 -->
+                <div class="glass-card p-6 rounded-3xl border border-white/10 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="text-accent text-xs space-x-0.5">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-xs md:text-sm leading-relaxed italic" data-es="&quot;Recomiendo totalmente los servicios de Epithor. Su creatividad y el enfoque que le dan a los pequeños negocios hacen una gran diferencia.&quot;" data-en="&quot;I totally recommend Epithor's services. Their creativity and the focus they give to small businesses make a big difference.&quot;">
+                            "Recomiendo totalmente los servicios de Epithor. Su creatividad y el enfoque que le dan a los pequeños negocios hacen una gran diferencia."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-white/10 pt-4">
+                        <div class="w-9 h-9 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center text-accent font-bold text-xs">DP</div>
+                        <div>
+                            <h4 class="text-white font-heading font-semibold text-xs md:text-sm">Daniela Perea</h4>
+                            <span class="text-gray-400 text-[10px] md:text-xs" data-es="Estudio de Belleza" data-en="Beauty Studio">Estudio de Belleza</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. LAS 4 PREGUNTAS FRECUENTES (FAQS) -->
+        <section class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-accent text-xs font-semibold uppercase tracking-widest" data-es="Resolvemos tus dudas" data-en="We answer your questions">Resolvemos tus dudas</span>
+                <h2 class="text-3xl font-bold font-heading text-white mt-2" data-es="Preguntas Frecuentes" data-en="Frequently Asked Questions">Preguntas Frecuentes</h2>
+                <p class="text-gray-400 text-sm mt-2" data-es="Todo lo que necesitas saber antes de iniciar tu proyecto de branding" data-en="Everything you need to know before starting your branding project">Todo lo que necesitas saber antes de iniciar tu proyecto de branding</p>
+            </div>
+
+            <div class="space-y-4">
+                <details class="glass-card p-6 rounded-2xl border border-white/10 group cursor-pointer transition-all">
+                    <summary class="flex justify-between items-center font-heading font-semibold text-white text-base select-none">
+                        <span data-es="¿Qué incluye el servicio de identidad visual y branding?" data-en="What does the visual identity and branding service include?">¿Qué incluye el servicio de identidad visual y branding?</span>
+                        <span class="text-accent transition-transform group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-300 text-sm mt-4 leading-relaxed" data-es="Incluye la creación del logotipo principal y variantes, definición de paleta de colores corporativos, tipografías oficiales y un manual de marca detallado que explica cómo aplicar correctamente tu identidad en diferentes soportes." data-en="It includes the creation of the main logo and variants, definition of corporate color palettes, official fonts, and a detailed brand manual explaining how to properly apply your identity across different media.">
+                        Incluye la creación del logotipo principal y variantes, definición de paleta de colores corporativos, tipografías oficiales y un manual de marca detallado que explica cómo aplicar correctamente tu identidad en diferentes soportes.
+                    </p>
+                </details>
+
+                <details class="glass-card p-6 rounded-2xl border border-white/10 group cursor-pointer transition-all">
+                    <summary class="flex justify-between items-center font-heading font-semibold text-white text-base select-none">
+                        <span data-es="¿Cuánto tiempo toma desarrollar un proyecto de diseño?" data-en="How long does it take to develop a design project?">¿Cuánto tiempo toma desarrollar un proyecto de diseño?</span>
+                        <span class="text-accent transition-transform group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-300 text-sm mt-4 leading-relaxed" data-es="El tiempo varía según la complejidad del proyecto. Por lo general, una propuesta de identidad visual completa y su manual toman entre 1 y 2 semanas de trabajo colaborativo." data-en="Time varies depending on project complexity. Generally, a complete visual identity proposal and its manual take between 1 and 2 weeks of collaborative work.">
+                        El tiempo varía según la complejidad del proyecto. Por lo general, una propuesta de identidad visual completa y su manual toman entre 1 y 2 semanas de trabajo colaborativo.
+                    </p>
+                </details>
+
+                <details class="glass-card p-6 rounded-2xl border border-white/10 group cursor-pointer transition-all">
+                    <summary class="flex justify-between items-center font-heading font-semibold text-white text-base select-none">
+                        <span data-es="¿Cómo puedo ponerme en contacto o iniciar un servicio?" data-en="How can I get in touch or start a service?">¿Cómo puedo ponerme en contacto o iniciar un servicio?</span>
+                        <span class="text-accent transition-transform group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-300 text-sm mt-4 leading-relaxed" data-es="Puedes ir directamente a nuestra sección de <a href=&quot;contacto.html&quot; class=&quot;text-accent underline font-medium&quot;>Contáctanos</a>, rellenar el formulario con los detalles de tu emprendimiento y nos comunicaremos contigo de inmediato." data-en="You can go directly to our <a href=&quot;contacto.html&quot; class=&quot;text-accent underline font-medium&quot;>Contact Us</a> section, fill out the form with your business details, and we will get in touch with you immediately.">
+                        Puedes ir directamente a nuestra sección de <a href="contacto.html" class="text-accent underline font-medium">Contáctanos</a>, rellenar el formulario con los detalles de tu emprendimiento y nos comunicaremos contigo de inmediato.
+                    </p>
+                </details>
+
+                <details class="glass-card p-6 rounded-2xl border border-white/10 group cursor-pointer transition-all">
+                    <summary class="flex justify-between items-center font-heading font-semibold text-white text-base select-none">
+                        <span data-es="¿Trabajan con microemprendimientos y negocios locales?" data-en="Do you work with micro-enterprises and local businesses?">¿Trabajan con microemprendimientos y negocios locales?</span>
+                        <span class="text-accent transition-transform group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-300 text-sm mt-4 leading-relaxed" data-es="¡Por supuesto! De hecho, Epithor nació de la necesidad de ofrecer soluciones gráficas profesionales, accesibles y de alta calidad para potenciar micro-emprendimientos y negocios locales." data-en="Of course! In fact, Epithor was born out of the need to offer professional, accessible, and high-quality graphic solutions to empower micro-enterprises and local businesses.">
+                        ¡Por supuesto! De hecho, Epithor nació de la necesidad de ofrecer soluciones gráficas profesionales, accesibles y de alta calidad para potenciar micro-emprendimientos y negocios locales.
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <!-- BANNER FINAL CTA -->
+        <section class="max-w-6xl mx-auto px-6">
+            <div class="glass-card p-10 md:p-14 rounded-3xl border border-accent/30 text-center relative overflow-hidden bg-gradient-to-b from-surface to-obsidian">
+                <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold font-heading text-white mb-4" data-es="¿Listo para transformar la imagen de tu marca?" data-en="Ready to transform your brand's image?">¿Listo para transformar la imagen de tu marca?</h2>
+                <p class="text-gray-400 max-w-xl mx-auto mb-8 text-sm md:text-base" data-es="Dejemos que tu negocio hable por sí solo con una identidad visual profesional y moderna." data-en="Let your business speak for itself with a professional and modern visual identity.">Dejemos que tu negocio hable por sí solo con una identidad visual profesional y moderna.</p>
+                
+                <a href="contacto.html" class="inline-flex items-center gap-3 bg-accent text-obsidian font-bold px-8 py-4 rounded-xl shadow-lg shadow-accent/25 hover:bg-cyan-300 transition-all">
+                    <span data-es="Contáctanos Ahora" data-en="Contact Us Now">Contáctanos Ahora</span> <i class="fa-solid fa-paper-plane"></i>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER COMPACTO -->
+    <footer class="bg-[#0e1017] border-t border-white/10 text-gray-400 py-8 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-12 rounded-lg overflow-hidden border border-accent/30 bg-surface flex items-center justify-center">
+                    <img src="LOGO EPITHOR.JPG" alt="Logo Epithor" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <span class="text-base font-bold font-heading text-white tracking-wide block">Epithor</span>
+                    <div class="flex gap-3 mt-1">
+                        <a href="#" class="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-accent hover:text-obsidian transition-colors"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                        <a href="#" class="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-accent hover:text-obsidian transition-colors"><i class="fa-brands fa-instagram text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-1 text-sm md:text-center">
+                <h4 class="text-white font-heading font-bold text-xs uppercase tracking-wider mb-2" data-es="Contacto" data-en="Contact">Contacto</h4>
+                <p class="flex items-center md:justify-center gap-2"><i class="fa-solid fa-phone text-accent text-xs"></i> (+57) 323 6060185</p>
+                <p class="flex items-center md:justify-center gap-2"><i class="fa-solid fa-envelope text-accent text-xs"></i> epithoragency@gmail.com</p>
+            </div>
+
+            <div class="space-y-1 text-sm md:text-right">
+                <h4 class="text-white font-heading font-bold text-xs uppercase tracking-wider mb-2" data-es="Acerca de" data-en="About">Acerca de</h4>
+                <p><a href="nosotros.html" class="hover:text-accent transition-colors" data-es="Aviso de privacidad" data-en="Privacy Policy">Aviso de privacidad</a></p>
+                <p><a href="nosotros.html" class="hover:text-accent transition-colors" data-es="Términos de servicio" data-en="Terms of Service">Términos de servicio</a></p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- VENTANA EMERGENTE (MODAL) DE INICIO DE SESIÓN -->
+    <div id="loginModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm hidden">
+        <div class="bg-[#12141c] border border-blue-900/50 w-full max-w-md p-8 rounded-3xl shadow-2xl relative text-center space-y-6 mx-4">
+            
+            <h2 class="text-3xl font-bold font-heading text-white" data-es="Iniciar Sesión" data-en="Log In">Iniciar Sesión</h2>
+            
+            <form onsubmit="event.preventDefault(); alert('¡Sesión iniciada con éxito!'); closeLoginModal();" class="space-y-4 text-left">
+                <div>
+                    <input type="email" placeholder="Correo electrónico" data-es-placeholder="Correo electrónico" data-en-placeholder="Email address" required class="w-full bg-[#1a1d28] border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-accent">
+                </div>
+                <div>
+                    <input type="password" placeholder="Contraseña" data-es-placeholder="Contraseña" data-en-placeholder="Password" required class="w-full bg-[#1a1d28] border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-accent">
+                </div>
+                
+                <button type="submit" class="w-full bg-[#00f2fe] text-obsidian font-bold py-3.5 rounded-xl hover:bg-cyan-300 transition-all shadow-lg shadow-accent/20 text-center block" data-es="Ingresar" data-en="Enter">
+                    Ingresar
+                </button>
+            </form>
+
+            <button type="button" onclick="closeLoginModal()" class="w-full bg-transparent border border-white/20 text-white font-semibold py-3.5 rounded-xl hover:bg-white/5 transition-all text-center" data-es="Cancelar" data-en="Cancel">
+                Cancelar
+            </button>
+        </div>
+    </div>
+
+    <!-- SCRIPT DE APERTURA Y CIERRE DEL MODAL -->
+    <script>
+        function openLoginModal() {
+            document.getElementById('loginModal').classList.remove('hidden');
+        }
+        function closeLoginModal() {
+            document.getElementById('loginModal').classList.add('hidden');
+        }
+        window.onclick = function(event) {
+            let modal = document.getElementById('loginModal');
+            if (event.target == modal) {
+                closeLoginModal();
+            }
+        }
+    </script>
+
+    <!-- SCRIPT GLOBAL DE TRADUCCIÓN (Traduce toda la página con un solo clic) -->
+    <script>
+        let currentLang = 'es'; // Empieza en español
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            
+            // Cambiar el texto del botón superior (ES / EN)
+            const langText = document.getElementById('lang-text');
+            if (langText) {
+                langText.textContent = currentLang === 'es' ? 'ES' : 'EN';
+            }
+
+            // Traducir todos los textos de la página
+            const elements = document.querySelectorAll('[data-es][data-en]');
+            elements.forEach(el => {
+                if (currentLang === 'en') {
+                    el.textContent = el.getAttribute('data-en');
+                } else {
+                    el.textContent = el.getAttribute('data-es');
+                }
+            });
+
+            // Traducir placeholders de inputs si los hay
+            const inputs = document.querySelectorAll('[data-es-placeholder][data-en-placeholder]');
+            inputs.forEach(input => {
+                if (currentLang === 'en') {
+                    input.placeholder = input.getAttribute('data-en-placeholder');
+                } else {
+                    input.placeholder = input.getAttribute('data-es-placeholder');
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
