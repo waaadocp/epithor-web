@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epithor — Contáctanos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { obsidian: '#0b0c10', surface: '#12141c', accent: '#00f2fe' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Space Grotesk', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0b0c10; color: #e5e7eb; }
+        h2, .font-heading { font-family: 'Space Grotesk', sans-serif; }
+        .glass-card { background: rgba(26, 29, 40, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <!-- MENÚ -->
+    <header class="fixed top-0 w-full z-50 glass-card border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-10 h-14 rounded-xl overflow-hidden border border-accent/30 bg-surface flex items-center justify-center">
+                    <img src="LOGO EPITHOR.JPG" alt="Logo Epithor" class="w-full h-full object-cover">
+                </div>
+                <span class="text-2xl font-bold font-heading text-white">EPITHOR</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-accent transition-colors" data-es="Inicio" data-en="Home">Inicio</a>
+                <a href="nosotros.html" class="hover:text-accent transition-colors" data-es="Sobre nosotros" data-en="About Us">Sobre nosotros</a>
+                <a href="servicios.html" class="hover:text-accent transition-colors" data-es="Servicios" data-en="Services">Servicios</a>
+                <a href="contacto.html" class="text-accent font-semibold" data-es="Contáctanos" data-en="Contact Us">Contáctanos</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <button onclick="openLoginModal()" class="hidden md:inline-flex bg-gradient-to-r from-accent to-blue-600 text-obsidian font-semibold px-6 py-2.5 rounded-full shadow-lg shadow-accent/20 cursor-pointer hover:opacity-90 transition-opacity" data-es="Iniciar Sesión" data-en="Log In">
+                    Iniciar Sesión
+                </button>
+
+                <!-- BOTÓN GLOBAL DE IDIOMA -->
+                <button id="lang-toggle" onclick="toggleLanguage()" class="flex items-center gap-2 px-4 py-2 rounded-full border border-accent/40 bg-accent/10 text-accent font-semibold text-xs hover:bg-accent/20 transition-all shadow-sm cursor-pointer">
+                    <i class="fa-solid fa-globe"></i> 
+                    <span id="lang-text">ES</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main class="pt-40 pb-20 px-6 max-w-3xl mx-auto my-auto w-full">
+        <div class="glass-card p-8 md:p-10 rounded-3xl border border-white/10">
+            <h2 class="text-3xl font-bold font-heading text-white text-center mb-2" data-es="Contáctanos" data-en="Contact Us">Contáctanos</h2>
+            <p class="text-gray-400 text-center mb-6 text-sm" data-es="Escríbenos y comencemos a trabajar en la nueva imagen de tu empresa." data-en="Write to us and let's start working on your company's new image.">Escríbenos y comencemos a trabajar en la nueva imagen de tu empresa.</p>
+            
+            <form onsubmit="event.preventDefault(); alert('¡Gracias por comunicarte con Epithor! Responderemos pronto.');" class="space-y-4">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-medium text-gray-300 mb-1" data-es="Nombre" data-en="Name">Nombre</label>
+                        <input type="text" required class="w-full bg-surface border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-accent">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-gray-300 mb-1" data-es="Correo Electrónico" data-en="Email Address">Correo Electrónico</label>
+                        <input type="email" required class="w-full bg-surface border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-accent">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-gray-300 mb-1" data-es="Servicio Requerido" data-en="Required Service">Servicio Requerido</label>
+                    <select class="w-full bg-surface border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-accent">
+                        <option data-es="Creación de Logo" data-en="Logo Creation">Creación de Logo</option>
+                        <option data-es="Manual de Marca" data-en="Brand Manual">Manual de Marca</option>
+                        <option data-es="Diseño Publicitario / Web" data-en="Advertising / Web Design">Diseño Publicitario / Web</option>
+                        <option data-es="Diseño Completo de Identidad Visual" data-en="Complete Visual Identity Design">Diseño Completo de Identidad Visual</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-gray-300 mb-1" data-es="Detalles del Proyecto" data-en="Project Details">Detalles del Proyecto</label>
+                    <textarea rows="3" required class="w-full bg-surface border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-accent" placeholder="Cuéntanos sobre tu marca..." data-es-placeholder="Cuéntanos sobre tu marca..." data-en-placeholder="Tell us about your brand..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-accent text-obsidian font-bold py-3 rounded-xl hover:bg-cyan-300 shadow-lg shadow-accent/20 text-sm" data-es="Enviar Mensaje" data-en="Send Message">
+                    Enviar Mensaje
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <!-- FOOTER COMPACTO -->
+    <footer class="bg-[#0e1017] border-t border-white/10 text-gray-400 py-8 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-12 rounded-lg overflow-hidden border border-accent/30 bg-surface flex items-center justify-center">
+                    <img src="LOGO EPITHOR.JPG" alt="Logo Epithor" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <span class="text-base font-bold font-heading text-white tracking-wide block">Epithor</span>
+                    <div class="flex gap-3 mt-1">
+                        <a href="#" class="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-accent hover:text-obsidian transition-colors"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                        <a href="#" class="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-accent hover:text-obsidian transition-colors"><i class="fa-brands fa-instagram text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-1 text-sm md:text-center">
+                <h4 class="text-white font-heading font-bold text-xs uppercase tracking-wider mb-2" data-es="Contacto" data-en="Contact">Contacto</h4>
+                <p class="flex items-center md:justify-center gap-2"><i class="fa-solid fa-phone text-accent text-xs"></i> (+57) 323 6060185</p>
+                <p class="flex items-center md:justify-center gap-2"><i class="fa-solid fa-envelope text-accent text-xs"></i> epithoragency@gmail.com</p>
+            </div>
+            <div class="space-y-1 text-sm md:text-right">
+                <h4 class="text-white font-heading font-bold text-xs uppercase tracking-wider mb-2" data-es="Acerca de" data-en="About">Acerca de</h4>
+                <p><a href="nosotros.html" class="hover:text-accent transition-colors" data-es="Aviso de privacidad" data-en="Privacy Policy">Aviso de privacidad</a></p>
+                <p><a href="nosotros.html" class="hover:text-accent transition-colors" data-es="Términos de servicio" data-en="Terms of Service">Términos de servicio</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE INICIO DE SESIÓN -->
+    <div id="loginModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm hidden">
+        <div class="bg-[#12141c] border border-blue-900/50 w-full max-w-md p-8 rounded-3xl shadow-2xl relative text-center space-y-6 mx-4">
+            <h2 class="text-3xl font-bold font-heading text-white" data-es="Iniciar Sesión" data-en="Log In">Iniciar Sesión</h2>
+            <form onsubmit="event.preventDefault(); alert('¡Sesión iniciada con éxito!'); closeLoginModal();" class="space-y-4 text-left">
+                <div>
+                    <input type="email" placeholder="Correo electrónico" data-es-placeholder="Correo electrónico" data-en-placeholder="Email address" required class="w-full bg-[#1a1d28] border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-accent">
+                </div>
+                <div>
+                    <input type="password" placeholder="Contraseña" data-es-placeholder="Contraseña" data-en-placeholder="Password" required class="w-full bg-[#1a1d28] border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-accent">
+                </div>
+                <button type="submit" class="w-full bg-[#00f2fe] text-obsidian font-bold py-3.5 rounded-xl hover:bg-cyan-300 transition-all shadow-lg shadow-accent/20 text-center block" data-es="Ingresar" data-en="Enter">
+                    Ingresar
+                </button>
+            </form>
+            <button type="button" onclick="closeLoginModal()" class="w-full bg-transparent border border-white/20 text-white font-semibold py-3.5 rounded-xl hover:bg-white/5 transition-all text-center" data-es="Cancelar" data-en="Cancel">
+                Cancelar
+            </button>
+        </div>
+    </div>
+
+    <!-- SCRIPT DE MODAL Y TRADUCCIÓN -->
+    <script>
+        function openLoginModal() { document.getElementById('loginModal').classList.remove('hidden'); }
+        function closeLoginModal() { document.getElementById('loginModal').classList.add('hidden'); }
+        window.onclick = function(event) { if (event.target == document.getElementById('loginModal')) { closeLoginModal(); } }
+
+        let currentLang = 'es';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            
+            const langText = document.getElementById('lang-text');
+            if (langText) {
+                langText.textContent = currentLang === 'es' ? 'ES' : 'EN';
+            }
+
+            const elements = document.querySelectorAll('[data-es][data-en]');
+            elements.forEach(el => {
+                if (currentLang === 'en') {
+                    el.innerHTML = el.getAttribute('data-en');
+                } else {
+                    el.innerHTML = el.getAttribute('data-es');
+                }
+            });
+
+            const inputs = document.querySelectorAll('[data-es-placeholder][data-en-placeholder]');
+            inputs.forEach(input => {
+                if (currentLang === 'en') {
+                    input.placeholder = input.getAttribute('data-en-placeholder');
+                } else {
+                    input.placeholder = input.getAttribute('data-es-placeholder');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
+<div class="pt-2">
+    <a href="https://wa.me/573236060185?text=Hola%20Epithor,%20estoy%20interesado%20en%20sus%20servicios%20de%20dise%C3%B1o" target="_blank" class="w-full bg-surface border border-accent/40 text-accent hover:bg-accent hover:text-obsidian font-bold py-3.5 px-4 rounded-xl shadow-lg transition-all text-sm flex items-center justify-center gap-3">
+        <i class="fa-brands fa-whatsapp text-xl"></i>
+        <span data-es="Chatear por WhatsApp" data-en="Chat on WhatsApp">Chatear por WhatsApp</span>
+    </a>
+</div>
+
